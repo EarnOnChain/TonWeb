@@ -8,7 +8,7 @@ body {
   padding: 20px;
   margin: 0;
   min-height: 100vh; /* Ensure full viewport height */
-  background-image: url("/toncity.png");
+  background-image: url("toncity.png");
   background-size: cover; /* Make it cover the whole page */
   background-repeat: no-repeat; /* Prevent tiling */
   background-position: center; /* Keep it centered */
