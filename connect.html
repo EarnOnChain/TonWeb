@@ -119,13 +119,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: "https://vocal-smakager-e64636.netlify.app/manifest.json",
     buttonRootId: "ton-connect",
+    uiOptions: {
+      twaReturnUrl: "https://t.me/TonReward_Bot" // ✅ Telegram bot URL
+    }
   });
-    // Set the Telegram return URL
-        tonConnectUI.uiOptions = {
-          twaReturnUrl: "https://t.me/TonReward_Bot",
-        };
 
-  
   tonConnectUI.onStatusChange(async (wallet) => {
     if (wallet && wallet.account?.address) {
       connectedWallet = wallet;
