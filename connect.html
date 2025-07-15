@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TON Wallet Analyzer</title>
+    <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
+    <link rel="stylesheet" href="connect.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- 1. Wrap everything in a container -->
+  <body>
+    <header>
+      <h2
+        style="
+          color: #040724c0;
+
+          text-shadow: 0 0 10px rgba(0, 68, 255, 0.7);
+          text-align: center;
+        "
+      >
+        Discover Your TON Potential
+      </h2>
+      <div id="ton-connect" class="connectbtn"></div>
+    </header>
+
+    <div class="app-container">
+      <!-- Wallet address -->
+      <p
+        id="wallet-address"
+        style="
+          color: #040724c0;
+
+          text-shadow: 0 0 10px rgba(0, 68, 255, 0.7);
+        "
+      >
+        Wallet: Not connected
+      </p>
+
+      <!-- Scan Wallet button -->
+      <button class="btn" onclick="scanWallet()">🔍 Scan Wallet</button>
+
+      <!-- Results and Checks -->
+      <div id="result" class="ranks"></div>
+      <!-- Eligibility Toggle Button -->
+      <button class="btn" onclick="showEligibility()" style="display: none">
+        📋 Check Eligibility
+      </button>
+      <div id="checks" class="montserrat-text" style="display: none"></div>
+      <!-- Balance -->
+      <div id="balanceResult"></div>
+
+      <!-- Claim button (hidden until eligibility is shown) -->
+      <button
+        class="btn"
+        id="claimBtn"
+        onclick="claimTon()"
+        style="display: none"
+        disabled
+      >
+        💸 Claim TON
+      </button>
+
+      <!-- Show Transactions Toggle (hidden by default) -->
+      <span
+        ><a
+          id="toggleTransactions"
+          onclick="toggleTransactions()"
+          style="display: none"
+          class="trxlist"
+        >
+          ⏩ Show Transactions
+        </a></span
+      >
+
+      <!-- Transaction List -->
+      <div
+        id="transactionContainer"
+        class="transaction-list"
+        style="display: none"
+      ></div>
+    </div>
+
+    <script src="connect.js"></script>
+  </body>
+</html>
